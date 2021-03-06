@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+    <!-- что-нибудь ещё -->
+</head>
+<body>
+<header class="Header">
+    <a href="/">
+        <img class="Logo_img" src="http://l91449n4.beget.tech/Logo.png"/>
+    </a> <a class="Head_Link" href="/">Главная</a> <a class="Head_Link"
+                                                                          href="/katalog">Каталог</a>
+    <a class="Head_Link" href="/uslugi">Ритуальные услуги</a> <a class="Head_Link"
+                                                                                           href="index.php?id=aboutus            ">О
+    нас</a> <a class="Head_Link" href="index.php?id=faq            ">FAQ</a> <a class="Head_Link"
+                                                                                href="index.php?id=contacts            ">Контакты</a>
+    <a class="Head_Link" href="/calc">Расчёт стоимости похорон</a></header>
+{% block content %}{% endblock %}
+<div class="push"></div>
+<div class="Footer">
+    МЫ СКОРБИМ ВМЕСТЕ С ВАМИ
+</div>
+<!-- Здесь, например, скрипты -->
+</body>
+</html>

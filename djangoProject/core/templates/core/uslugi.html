@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% extends 'core/base.html' %}
+    {% block title %}Услуги{% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="What_to_Have">
+            {% for i_usluga in kategorii_uslug %}
+
+                <hr/>
+                <h1 class="What_to_Do_Text">{{ i_usluga.nazvanie }}</h1>
+                <hr/>
+
+                <div class="What_to_Do_List">
+                    {% for i in i_usluga.uslugi_kategorii.all %}
+                        <div class="What_to_Do_Page">
+                            <h1 class="What_to_Do_H">
+                                {{ i.nazvanie }}
+                            </h1>
+                            <hr/>
+                            <div class="Setout">
+                                {% if  i.img %}
+                                    <img class="Setout_img1" src="{{ i.img.url }}"/>
+                                {% else %}
+                                    <img class="Setout_img1" src="http://l91449n4.beget.tech/img/3.jpg"/>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+
+            {% endfor %}
+        </div>
+    <!-- ну и всё остальное тоже тут -->
+    {% endblock %}
+</body>
+</html>
